@@ -36,6 +36,7 @@ function passTurn() {
   } else {
     activePlayer = player1;
   }
+  alert("It's " + activePlayer.name + "'s turn!");
 }
 
 function checkScore() {
@@ -59,6 +60,8 @@ $(function() {
     passTurn();
     $("#dice-roll").text(0);
     $("#current-score").text(0);
+    $("#player1-score").text(player1.totalScore);
+    $("#player2-score").text(player2.totalScore);
   });
 
   $("#name1-form").submit(function(event) {
@@ -67,6 +70,8 @@ $(function() {
     player1 = new Player(name);
     activePlayer = player1;
     $("#name1-form").hide();
+    $("#name2-form").show();
+    $("#p1-name").text(player1.name);
   });
 
   $("#name2-form").submit(function(event) {
@@ -74,5 +79,7 @@ $(function() {
     var name = $("#name2-field").val();
     player2 = new Player(name);
     $("#name2-form").hide();
+    $("#p2-name").text(player2.name);
+    $("#circles").show();
   });
 });

@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:900" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.1.1.js"></script>
@@ -9,23 +10,34 @@
     <title>Gentile Dreidel</title>
   </head>
   <body>
-    <div class="container">
-      <div id="current-score">
+    <div class="row">
+      <div class="col-xs-8">
+        <div id="hebrew-header">
+          <h1>גוי סביבון</h1>
+        </div>
+        <div id="circles">
+          <div id="scores">
+            <div id="player1-score" class="score-div"></div><p id="p1-name"></p>
+            <div id="player2-score" class="score-div"></div><p id="p2-name"></p>
+          </div>
+          <div id="current-score" class="score-div"></div>
+          <div id="dice-roll" class="score-div"></div>
+          <button id="roll-button" class="btn">Roll</button>
+          <button id="pass-button" class="btn">Pass</button>
+        </div>
+        <div id="forms">
+          <form id="name1-form">
+            <label for="name1-field">Enter player 1 name:</label>
+            <input id="name1-field" type="text">
+            <button id="name1-button" class="btn" type="submit">Submit</button>
+          </form>
+          <form id="name2-form">
+            <label for="name2-field">Enter player 2 name:</label>
+            <input id="name2-field" type="text">
+            <button id="name2-button" class="btn" type="submit">Submit</button>
+          </form>
+        </div>
       </div>
-      <div id="dice-roll">
-      </div>
-      <button id="roll-button">Roll</button>
-      <button id="pass-button">Pass</button>
-      <form id="name1-form">
-        <label for="name1-field">Enter player 1 name:</label>
-        <input id="name1-field" type="text">
-        <button id="name1-button" class="btn" type="submit">Submit</button>
-      </form>
-      <form id="name2-form">
-        <label for="name2-field">Enter player 2 name:</label>
-        <input id="name2-field" type="text">
-        <button id="name2-button" class="btn" type="submit">Submit</button>
-      </form>
     </div>
   </body>
 </html>

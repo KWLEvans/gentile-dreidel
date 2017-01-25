@@ -1,0 +1,66 @@
+body {
+  background-image: url(../img/torah.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #10130c;
+}
+
+#hebrew-header {
+  margin-left: 50%;
+  margin-top: 15%;
+}
+
+h1 {
+
+  font-family: 'Frank Ruhl Libre', sans-serif;
+  font-size: 5em;
+  color: #0038b8;
+}
+
+#circles {
+  display: none;
+}
+
+.score-div {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  background-color: blue;
+  color: papayawhip;
+  font-size: 4em;
+  text-align: center;
+  font-weight: bolder;
+  padding-top: 10px;
+}
+
+#scores {
+  float: right;
+}
+
+#forms {
+  margin-left: 43%;
+  margin-top: 20%;
+}
+
+#name2-form {
+  display: none;
+}
+
+#circles {
+  width: 80%;
+  margin-left: 30%;
+}
+
+#roll-button {
+  margin-left: 40%;
+}
+
+.btn {
+  background-color: #0038b8;
+  color: #ecc792;
+}
+
+.btn:hover {
+  box-shadow: 2px 2px black;
+  color: #ecc792;
+}
