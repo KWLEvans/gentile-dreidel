@@ -2,6 +2,7 @@
 //Back-End
 /////////////////////
 var currentScore = 0;
+var totalScore = 0;
 
 function rollDie() {
   var roll =  Math.floor(Math.random() * 6) + 1;
@@ -11,6 +12,11 @@ function rollDie() {
     currentScore += roll;
   }
   return roll;
+}
+
+function passTurn() {
+  totalScore += currentScore;
+  console.log(totalScore);
 }
 
 
@@ -23,5 +29,9 @@ $(function() {
     var roll = rollDie();
     $("#dice-roll").text(roll);
     $("#current-score").text(currentScore);
+  });
+
+  $("#pass-button").click(function() {
+    passTurn();
   });
 });
