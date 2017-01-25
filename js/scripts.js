@@ -2,7 +2,15 @@
 //Back-End
 /////////////////////
 var currentScore = 0;
-var totalScore = 0;
+var player1;
+var player2;
+var activePlayer;
+
+
+function Player(name) {
+  this.name = name;
+  this.totalScore = 0;
+}
 
 function rollDie() {
   var roll =  Math.floor(Math.random() * 6) + 1;
@@ -16,13 +24,13 @@ function rollDie() {
 }
 
 function passTurn() {
-  totalScore += currentScore;
+  activePlayer.totalScore += currentScore;
   currentScore = 0;
-  console.log(totalScore);
+  console.log(activePlayer.totalScore);
 }
 
 function checkScore() {
-  if (totalScore + currentScore >= 100) {
+  if (activePlayer.totalScore + currentScore >= 100) {
     alert("Game over.");
   }
 }
@@ -42,5 +50,20 @@ $(function() {
     passTurn();
     $("#dice-roll").text(0);
     $("#current-score").text(0);
+  });
+
+  $("#name1-form").submit(function(event) {
+    event.preventDefault();
+    var name = $("#name1-field").val();
+    player1 = new Player(name);
+    activePlayer = player1;
+    $("#name1-form").hide();
+  });
+
+  $("#name2-form").submit(function(event) {
+    event.preventDefault();
+    var name = $("#name2-field").val();
+    player2 = new Player(name);
+    $("#name2-form").hide();
   });
 });
