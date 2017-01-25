@@ -12,10 +12,15 @@ function Player(name) {
   this.totalScore = 0;
 }
 
+Player.prototype.addScore = function(score) {
+  this.totalScore += score;
+}
+
 function rollDie() {
   var roll =  Math.floor(Math.random() * 6) + 1;
   if (roll === 1) {
     currentScore = 0;
+    passTurn();
   } else {
     currentScore += roll;
   }
@@ -24,9 +29,13 @@ function rollDie() {
 }
 
 function passTurn() {
-  activePlayer.totalScore += currentScore;
+  activePlayer.addScore(currentScore);
   currentScore = 0;
-  console.log(activePlayer.totalScore);
+  if (activePlayer === player1) {
+    activePlayer = player2;
+  } else {
+    activePlayer = player1;
+  }
 }
 
 function checkScore() {
