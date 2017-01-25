@@ -11,14 +11,21 @@ function rollDie() {
   } else {
     currentScore += roll;
   }
+  checkScore();
   return roll;
 }
 
 function passTurn() {
   totalScore += currentScore;
+  currentScore = 0;
   console.log(totalScore);
 }
 
+function checkScore() {
+  if (totalScore + currentScore >= 100) {
+    alert("Game over.");
+  }
+}
 
 /////////////////////
 //Front-End
@@ -33,5 +40,7 @@ $(function() {
 
   $("#pass-button").click(function() {
     passTurn();
+    $("#dice-roll").text(0);
+    $("#current-score").text(0);
   });
 });
