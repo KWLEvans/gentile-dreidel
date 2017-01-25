@@ -1,9 +1,13 @@
 /////////////////////
 //Back-End
 /////////////////////
+var currentScore = 0;
 
 function rollDie() {
-  return Math.floor(Math.random() * 6) + 1; 
+  var roll =  Math.floor(Math.random() * 6) + 1;
+  currentScore += roll;
+  return roll;
+
 }
 
 
