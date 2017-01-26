@@ -5,13 +5,16 @@ body {
   background-color: #10130c;
 }
 
+#content-column {
+  padding-top: 8%;
+}
+
 #hebrew-header {
-  margin-left: 50%;
-  margin-top: 15%;
+  width: 100%;
+  text-align: center;
 }
 
 h1 {
-
   font-family: 'Frank Ruhl Libre', sans-serif;
   font-size: 5em;
   color: #0038b8;
@@ -21,7 +24,7 @@ h1 {
   display: none;
 }
 
-.score-div {
+.circle {
   height: 100px;
   width: 100px;
   border-radius: 100%;
@@ -33,12 +36,27 @@ h1 {
   padding-top: 10px;
 }
 
-#scores {
+#player-scores {
+  height: 100px;
+}
+
+#player2-score, #player2-score + span {
   float: right;
 }
 
+#player1-score, #player1-score + span {
+  float: left;
+}
+
+span {
+  margin-top: 7%;
+  padding-left: 2%;
+  padding-right: 2%;
+  font-size: 2em;
+}
+
 #forms {
-  margin-left: 43%;
+  margin-left: 24%;
   margin-top: 20%;
 }
 
@@ -47,17 +65,29 @@ h1 {
 }
 
 #circles {
-  width: 80%;
-  margin-left: 30%;
+  width: 100%;
 }
 
-#roll-button {
-  margin-left: 40%;
+#current-score, #dice-roll {
+  display: inline-block;
+}
+
+#current-score {
+  margin-left: 15%;
+}
+
+#dice-roll {
+  height: 150px;
+  width: 150px;
 }
 
 .btn {
   background-color: #0038b8;
   color: #ecc792;
+}
+
+#roll-button {
+  margin-right: 4%;
 }
 
 .btn:hover {
